@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
+import { Alert } from "react-alert";
 export default class Form extends React.Component {
   state = {
-    Name: "Kamesh",
-    Mobile: "7395948407",
-    email: "Kamesh3799@gmail.com"
+    Name: "",
+    Mobile: "",
+    email: ""
   };
   change = e => {
     this.setState({
@@ -17,10 +18,13 @@ export default class Form extends React.Component {
     var phoneerr = true;
     if (!this.state.email.includes("@") || !this.state.email.includes("."))
       emailerr = true;
-    if (this.state.Mobile.length === 10) {
+    if (this.state.Mobile.length === 10 || /^\d+$/.test(this.state.Mobile)) {
       phoneerr = false;
     }
     if (phoneerr) {
+      var str = this.state.Mobile;
+      //      console.log(`${str} ${str.length}`);
+      alert("Your phone number is invalid!");
       this.setState({
         Name: this.state.Name,
         Mobile: "",
@@ -28,6 +32,7 @@ export default class Form extends React.Component {
       });
     }
     if (emailerr) {
+      alert("Your email ID is invalid!");
       this.setState({
         Name: this.state.Name,
         Mobile: this.state.Mobile,
@@ -35,6 +40,7 @@ export default class Form extends React.Component {
       });
     }
     if (phoneerr && emailerr) {
+      alert("Your email ID and phone number is invalid!");
       this.setState({
         Name: this.state.Name,
         Mobile: "",

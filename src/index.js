@@ -38,7 +38,7 @@ class App extends React.Component {
     console.log(this.state.List);
     return (
       <div>
-        <h2>Form</h2>
+        <h2>Subscription Form</h2>
         <Form saveData={data => this.saveData(data)} />
         <br />
         <h3> Form Responses </h3>
