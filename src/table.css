@@ -1,0 +1,34 @@
+#title {
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+
+#form {
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 100%;
+}
+
+#form td,
+#form th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#form tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#form tr:hover {
+  background-color: #7af198;
+}
+
+#form th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #269642;
+  color: white;
+}
